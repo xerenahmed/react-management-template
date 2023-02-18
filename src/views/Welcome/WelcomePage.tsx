@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React, { FC } from 'react';
 
-const MainPage: FC = () => {
+const WelcomePage: FC = () => {
     return (
         <>
             <Typography variant={'h4'} component={'h1'}>
@@ -11,4 +11,4 @@ const MainPage: FC = () => {
     );
 };
 
-export default MainPage;
+export default WelcomePage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from './components';
-import { LogoutPage, MainPage, LoginPage, ProductsPage } from './views';
+import { LogoutPage, WelcomePage, LoginPage, ProductsPage } from './views';
 
 const Router = createBrowserRouter([
     {
@@ -10,7 +10,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <MainPage />,
+                element: <WelcomePage />,
             },
             {
                 path: '/products',
