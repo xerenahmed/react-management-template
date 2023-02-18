@@ -14,37 +14,14 @@ import {
 } from '@mui/material';
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-    SettingsOutlined,
-    LogoutOutlined,
-    ListAltOutlined,
-    DensityMediumOutlined,
-    Inventory2Outlined,
-    ExpandLess,
-    ExpandMore,
-    Add,
-    FormatListBulletedOutlined,
-} from '@mui/icons-material/';
-
-const ANCHOR = 'left';
+import { DensityMediumOutlined, ExpandLess, ExpandMore } from '@mui/icons-material/';
+import Navigation from './Navigation';
+import { SIDEBAR } from '../../utils/constants';
 
 const Sidebar: FC = () => {
     const [isShowing, setShowing] = useState<boolean>(false);
     const toggleShowing = () => setShowing((value) => !value);
 
-    const buttons = [
-        {
-            title: 'Products',
-            icon: <Inventory2Outlined />,
-            children: [
-                { title: 'List', href: '/products', icon: <FormatListBulletedOutlined /> },
-                { title: 'Add', href: '/products/add', icon: <Add /> },
-            ],
-        },
-        { title: 'Orders', href: '/orders', icon: <ListAltOutlined /> },
-        { title: 'Settings', href: '/settigns', icon: <SettingsOutlined /> },
-        { title: 'Log out', href: '/logout', icon: <LogoutOutlined /> },
-    ];
     return (
         <Box>
             <Hidden mdDown>
@@ -64,8 +41,8 @@ const Sidebar: FC = () => {
                         </Typography>
                     </Link>
                     <List>
-                        {buttons.map((button, index) => (
-                            <SidebarListItem key={index} {...button} />
+                        {Navigation.map((nav, index) => (
+                            <SidebarListItem key={index} {...nav} />
                         ))}
                     </List>
 
@@ -83,7 +60,7 @@ const Sidebar: FC = () => {
                         <Typography variant={'h5'}>EA Studios</Typography>
                     </Link>
                 </Box>
-                <Drawer anchor={ANCHOR} open={isShowing} onClose={toggleShowing}>
+                <Drawer anchor={SIDEBAR.anchor} open={isShowing} onClose={toggleShowing}>
                     <Box sx={{ width: 250 }} role="presentation">
                         <List
                             subheader={
@@ -92,8 +69,8 @@ const Sidebar: FC = () => {
                                 </ListSubheader>
                             }
                         >
-                            {buttons.map((button, index) => (
-                                <SidebarListItem key={index} {...button} onClickLink={() => setShowing(false)} />
+                            {Navigation.map((nav, index) => (
+                                <SidebarListItem key={index} {...nav} onClickLink={() => setShowing(false)} />
                             ))}
                         </List>
                         <Divider />
