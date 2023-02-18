@@ -5,7 +5,7 @@ const MainPage: FC = () => {
     return (
         <>
             <Typography variant={'h4'} component={'h1'}>
-                Eren Ahmet Akyol
+                Main Page
             </Typography>
         </>
     );
