@@ -1,10 +1,18 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { LoginResponse } from '../types/api';
 import { API_URL } from '../utils/constants';
 
 const axiosClient = axios.create({
     baseURL: API_URL,
     validateStatus: () => true,
+});
+
+const withAuth = (token: string, config: AxiosRequestConfig = {}): AxiosRequestConfig => ({
+    ...config,
+    headers: {
+        ...config.headers,
+        Authorization: `Bearer ${token}`,
+    },
 });
 
 const API = {
