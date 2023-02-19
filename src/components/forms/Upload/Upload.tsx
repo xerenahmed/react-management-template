@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import { Box, BoxProps } from '@mui/system';
 import { SvgIconProps, Typography } from '@mui/material';
 import { UploadFileOutlined } from '@mui/icons-material';
+import { CrossFile } from '../../../types';
 
 type Props = {
     formik?: ReturnType<typeof useFormik<any>>;
@@ -37,7 +38,7 @@ const Upload: FC<Props> = ({
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                gap: 4,
                 '&:hover': {
                     border: '2px dashed black',
                 },
@@ -52,11 +53,25 @@ const Upload: FC<Props> = ({
                 accept={'.jpg, .jpeg, .png, .webp'}
                 onChange={(event) => {
                     if (formik) {
-                        const files = event.target.files;
+                        const pureFiles = event.target.files;
+                        let files: CrossFile[] = [];
+
+                        if (!!pureFiles) {
+                            files = Array.from(pureFiles).map(
+                                (file) =>
+                                    ({
+                                        name: file.name,
+                                        url: URL.createObjectURL(file),
+                                        isLocal: true,
+                                        file,
+                                    } as CrossFile),
+                            );
+                        }
+
                         if (changeMode === 'set') {
-                            formik.setFieldValue(field, files ? Array.from(files) : files);
-                        } else if (!!files) {
-                            const newValue = [...formik.values[field], ...Array.from(files)];
+                            formik.setFieldValue(field, files);
+                        } else {
+                            const newValue = [...formik.values[field], ...files];
                             formik.setFieldValue(field, newValue);
                         }
                     } else if (!!onChange) {
