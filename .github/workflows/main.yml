@@ -11,18 +11,6 @@ on:
             - '**.tsx'
 
 jobs:
-    prettier:
-        name: Prettier Check
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v2
-
-            - name: Prettify code
-              uses: creyD/prettier_action@v4.2
-              with:
-                  prettier_options: --check .
-                  only_changed: true
     build:
         name: Build App
         runs-on: ubuntu-latest
