@@ -8,8 +8,8 @@ dependencies:
     specifier: ^11.10.5
     version: 11.10.6(@emotion/react@11.10.6)(@types/react@18.0.28)(react@18.2.0)
   '@fontsource/roboto':
-    specifier: ^4.5.8
-    version: 4.5.8
+    specifier: ^5.0.1
+    version: 5.0.3
   '@mui/icons-material':
     specifier: ^5.11.9
     version: 5.11.9(@mui/material@5.11.9)(@types/react@18.0.28)(react@18.2.0)
@@ -70,8 +70,8 @@ devDependencies:
     specifier: ^18.0.28
     version: 18.0.28
   '@types/react-dom':
-    specifier: ^18.0.11
-    version: 18.0.11
+    specifier: ^18.2.6
+    version: 18.2.6
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.52.0
     version: 5.52.0(@typescript-eslint/parser@5.52.0)(eslint@8.34.0)(typescript@5.0.4)
@@ -1774,8 +1774,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@fontsource/roboto@4.5.8:
-    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
+  /@fontsource/roboto@5.0.3:
+    resolution: {integrity: sha512-jbZDFwEFARDlo8TqG7th/xjhuq87GYfFpFb+uxuy+0Ng1bhRVgBRWlLj8+WIKhCTOr+h4QXbjpybLWFLUirOwQ==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
@@ -2596,7 +2596,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       '@testing-library/dom': 9.0.0
-      '@types/react-dom': 18.0.11
+      '@types/react-dom': 18.2.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -2794,8 +2794,8 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: false
 
-  /@types/react-dom@18.0.11:
-    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
+  /@types/react-dom@18.2.6:
+    resolution: {integrity: sha512-2et4PDvg6PVCyS7fuTc4gPoksV58bW0RwSxWKcPRcHZf0PRUGq03TKcD/rUHe3azfV6/5/biUBJw+HhCQjaP0A==}
     dependencies:
       '@types/react': 18.0.28
 
